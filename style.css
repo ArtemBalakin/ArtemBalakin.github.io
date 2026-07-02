@@ -310,7 +310,7 @@ body {
 .str { color: #96d0ff; }
 
 /* ── Sections ── */
-.section { padding: 7rem 0; border-top: 1px solid var(--border); }
+.section { padding: 7rem 0; border-top: 1px solid var(--border); scroll-margin-top: var(--nav-h); }
 
 .container {
   max-width: 1120px;
