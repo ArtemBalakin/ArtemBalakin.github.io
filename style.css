@@ -699,6 +699,19 @@ body {
 .footer a { color: var(--accent); text-decoration: none; }
 .footer a:hover { text-decoration: underline; }
 
+/* ── Java timer ── */
+#javaTimer {
+  font-size: 1.4rem !important;
+  letter-spacing: -0.02em;
+  transition: color 0.3s;
+}
+@keyframes timerPulse {
+  0%   { color: var(--accent); text-shadow: 0 0 12px var(--accent-glow); }
+  50%  { color: var(--accent-bright); text-shadow: 0 0 24px var(--accent-glow); }
+  100% { color: var(--accent); text-shadow: none; }
+}
+.timer-pulse { animation: timerPulse 0.6s ease; }
+
 /* ── Animations ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
@@ -711,13 +724,41 @@ body {
 @keyframes blink {
   0%, 100% { opacity: 1; } 50% { opacity: 0; }
 }
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: none; }
+}
 
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
 }
 .reveal.visible { opacity: 1; transform: none; }
+
+/* Alternate reveal directions for project cards */
+.project-card:nth-child(odd)  { transform: translateX(-20px); }
+.project-card:nth-child(even) { transform: translateX(20px); }
+.project-card.visible         { transform: none; }
+
+/* Stack groups slide up with stagger handled in JS */
+.stack-group { transform: translateY(24px); }
+.stack-group.visible { transform: none; }
+
+/* Section titles scale slightly */
+.section-title {
+  transform: translateY(16px) scale(0.98);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.section-title.visible { transform: none; }
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {

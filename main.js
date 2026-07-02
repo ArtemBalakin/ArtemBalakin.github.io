@@ -247,6 +247,19 @@ function typeLoop(l) {
   typedTimer = setTimeout(function() { typeLoop(l); }, typedDeleting ? 40 : 75);
 }
 
+// ── Hero parallax ──
+var heroSection = document.getElementById('hero');
+window.addEventListener('scroll', function() {
+  if (!heroSection) return;
+  var scrollY = window.scrollY;
+  var heroVis = document.querySelector('.hero-visual');
+  var heroOrb = document.querySelector('.hero::before');
+  if (heroVis && scrollY < window.innerHeight) {
+    heroVis.style.transform = 'translateY(' + scrollY * 0.08 + 'px)';
+    heroVis.style.opacity   = 1 - scrollY / (window.innerHeight * 0.8);
+  }
+}, { passive: true });
+
 // ── Nav shadow ──
 window.addEventListener('scroll', function() {
   nav.classList.toggle('scrolled', window.scrollY > 10);
@@ -293,6 +306,58 @@ function closeModal() {
 closeBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+// ── Java experience live timer ──
+var JAVA_START = new Date('2022-09-01T00:00:00');
+var javaTimerEl = document.getElementById('javaTimer');
+
+function updateJavaTimer() {
+  var now  = new Date();
+  var diff = now - JAVA_START;
+  var totalDays = Math.floor(diff / 86400000);
+  var years  = Math.floor(totalDays / 365);
+  var months = Math.floor((totalDays % 365) / 30);
+  var days   = totalDays % 30;
+  javaTimerEl.textContent = years + 'y ' + months + 'm ' + days + 'd';
+}
+
+if (javaTimerEl) {
+  updateJavaTimer();
+  setInterval(updateJavaTimer, 86400000); // update daily
+  // Subtle pulse every ~10s to show it's live
+  setInterval(function() {
+    javaTimerEl.classList.add('timer-pulse');
+    setTimeout(function() { javaTimerEl.classList.remove('timer-pulse'); }, 600);
+  }, 10000);
+}
+
+// ── Count-up animation for stat numbers ──
+function animateCount(el, target, suffix) {
+  var start = 0;
+  var duration = 1200;
+  var step = duration / target;
+  var timer = setInterval(function() {
+    start++;
+    el.textContent = start + suffix;
+    if (start >= target) clearInterval(timer);
+  }, step);
+}
+
+var countObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      var el = e.target;
+      var val = el.dataset.countTo;
+      var sfx = el.dataset.suffix || '';
+      if (val) animateCount(el, parseInt(val), sfx);
+      countObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-count-to]').forEach(function(el) {
+  countObserver.observe(el);
+});
 
 // ── Scroll reveal ──
 var revealEls = document.querySelectorAll(
