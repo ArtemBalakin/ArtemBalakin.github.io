@@ -63,6 +63,25 @@ const observer = new IntersectionObserver(entries => {
 
 reveals.forEach(el => observer.observe(el));
 
+// ── Work section scroll line ──
+const workLine = document.getElementById('workLine');
+const workDot  = document.getElementById('workDot');
+const workSection = document.getElementById('work');
+
+if (workLine && workSection) {
+  window.addEventListener('scroll', () => {
+    const rect = workSection.getBoundingClientRect();
+    const total = workSection.offsetHeight;
+    const scrolled = Math.max(0, -rect.top + window.innerHeight * 0.3);
+    const pct = Math.min(100, (scrolled / total) * 100);
+    workLine.style.setProperty('--line-fill', pct + '%');
+    workLine.style.background =
+      `linear-gradient(to bottom, var(--accent) ${pct}%, var(--border) ${pct}%)`;
+    const glowIntensity = pct > 5 ? '0 0 0 4px var(--accent-dim), 0 0 28px var(--accent-glow)' : '0 0 0 4px var(--accent-dim)';
+    workDot.style.boxShadow = glowIntensity;
+  }, { passive: true });
+}
+
 // ── Smooth active nav link ──
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
