@@ -6,44 +6,46 @@
   <title>Artem Balakin — Backend Developer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-
 
 <!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <span class="nav-logo">ab<span class="accent">.</span></span>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about"   data-i18n="nav.about">About</a></li>
+      <li><a href="#stack"   data-i18n="nav.stack">Stack</a></li>
+      <li><a href="#work"    data-i18n="nav.work">Work</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <span class="theme-icon">☀️</span>
-    </button>
+    <div class="nav-controls">
+      <button class="lang-toggle" id="langToggle">RU</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">☀️</span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-content">
-    <p class="hero-greeting">Hello, I'm</p>
+    <p class="hero-greeting" data-i18n="hero.greeting">Hello, I'm</p>
     <h1 class="hero-name">Artem Balakin</h1>
     <div class="hero-roles">
-      <span class="typed-text" id="typed"></span><span class="cursor">|</span>
+      <span id="typed"></span><span class="cursor">|</span>
     </div>
-    <p class="hero-desc">
+    <p class="hero-desc" data-i18n="hero.desc">
       Java backend developer building enterprise microservices at Diasoft —
       distributed systems, event-driven architecture, and public procurement platforms
       for government clients.
     </p>
     <div class="hero-cta">
-      <a href="#work" class="btn btn-primary">See my work</a>
-      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      <a href="#work"    class="btn btn-primary" data-i18n="hero.cta1">See my work</a>
+      <a href="#contact" class="btn btn-ghost"   data-i18n="hero.cta2">Get in touch</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -74,16 +76,16 @@
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="container">
-    <h2 class="section-title">About <span class="accent">Me</span></h2>
+    <h2 class="section-title" data-i18n="about.title">About <span class="accent">Me</span></h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>
+        <p data-i18n="about.p1">
           I'm a backend developer specialising in <strong>Java microservices</strong>
           on top of the Spring ecosystem. At Diasoft I work on a suite of services
           that power public procurement workflows for Russian government agencies —
           from purchase requests all the way through contract execution.
         </p>
-        <p>
+        <p data-i18n="about.p2">
           Outside of work I automate my daily life with <strong>Telegram bots</strong>,
           occasionally hack together <strong>Minecraft plugins in Kotlin</strong>,
           and wrote my university thesis on <strong>real-time snow physics</strong>
@@ -98,15 +100,15 @@
       <div class="about-stats">
         <div class="stat-card">
           <span class="stat-num">9+</span>
-          <span class="stat-label">Microservices shipped</span>
+          <span class="stat-label" data-i18n="about.stat1">Microservices shipped</span>
         </div>
         <div class="stat-card">
           <span class="stat-num">3+</span>
-          <span class="stat-label">Years in Java</span>
+          <span class="stat-label" data-i18n="about.stat2">Years in Java</span>
         </div>
         <div class="stat-card">
           <span class="stat-num">∞</span>
-          <span class="stat-label">Coffee consumed</span>
+          <span class="stat-label" data-i18n="about.stat3">Coffee consumed</span>
         </div>
       </div>
     </div>
@@ -116,11 +118,10 @@
 <!-- STACK -->
 <section class="section" id="stack">
   <div class="container">
-    <h2 class="section-title">Tech <span class="accent">Stack</span></h2>
+    <h2 class="section-title" data-i18n="stack.title">Tech <span class="accent">Stack</span></h2>
     <div class="stack-grid">
-
       <div class="stack-group">
-        <h3 class="stack-group-title">Backend</h3>
+        <h3 class="stack-group-title" data-i18n="stack.g1">Backend</h3>
         <div class="skill-tags">
           <span class="skill-tag main">Java 17 / 21</span>
           <span class="skill-tag main">Spring Boot</span>
@@ -131,9 +132,8 @@
           <span class="skill-tag">Gradle</span>
         </div>
       </div>
-
       <div class="stack-group">
-        <h3 class="stack-group-title">Data & Messaging</h3>
+        <h3 class="stack-group-title" data-i18n="stack.g2">Data & Messaging</h3>
         <div class="skill-tags">
           <span class="skill-tag main">Apache Kafka</span>
           <span class="skill-tag main">PostgreSQL</span>
@@ -143,9 +143,8 @@
           <span class="skill-tag">Apache Superset</span>
         </div>
       </div>
-
       <div class="stack-group">
-        <h3 class="stack-group-title">Infrastructure</h3>
+        <h3 class="stack-group-title" data-i18n="stack.g3">Infrastructure</h3>
         <div class="skill-tags">
           <span class="skill-tag main">Docker</span>
           <span class="skill-tag main">Kubernetes</span>
@@ -155,9 +154,8 @@
           <span class="skill-tag">Kibana</span>
         </div>
       </div>
-
       <div class="stack-group">
-        <h3 class="stack-group-title">Also</h3>
+        <h3 class="stack-group-title" data-i18n="stack.g4">Also</h3>
         <div class="skill-tags">
           <span class="skill-tag">Python</span>
           <span class="skill-tag">C#</span>
@@ -166,7 +164,6 @@
           <span class="skill-tag">Paper API</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -174,8 +171,7 @@
 <!-- WORK EXPERIENCE -->
 <section class="section" id="work">
   <div class="container">
-    <h2 class="section-title">Work <span class="accent">Experience</span></h2>
-
+    <h2 class="section-title" data-i18n="work.title">Work <span class="accent">Experience</span></h2>
     <div class="work-company">
       <div class="work-company-header">
         <div class="work-dot" id="workDot"></div>
@@ -185,13 +181,13 @@
           <span class="work-date">2022 — Present</span>
         </div>
       </div>
-      <p class="work-desc">
+      <p class="work-desc" data-i18n="work.desc">
         Building and maintaining enterprise microservices for the <strong>qArcher</strong>
         platform — a suite of services powering public procurement for government clients.
         Each service owns its full vertical: REST API, Kafka events, PostgreSQL schema,
         Liquibase migrations, autotests, and CI/CD pipeline.
       </p>
-      <div class="skill-tags" style="margin-bottom:2rem">
+      <div class="skill-tags" style="padding-left:2.45rem; margin-bottom:2rem">
         <span class="skill-tag main">Java</span>
         <span class="skill-tag main">Spring Boot</span>
         <span class="skill-tag main">Kafka</span>
@@ -202,42 +198,55 @@
         <span class="skill-tag">Jenkins</span>
       </div>
       <div class="projects-grid">
-        <div class="project-card">
+
+        <div class="project-card" data-modal="purchase-order">
           <div class="project-icon">🛒</div>
-          <h3 class="project-title">qipipurchase</h3>
-          <p class="project-desc">Purchase order lifecycle management with a finite state machine. Full event-driven flow via Kafka.</p>
+          <h3 class="project-title" data-i18n="w1.title">Purchase Order Lifecycle</h3>
+          <p class="project-desc" data-i18n="w1.desc">End-to-end management of purchase orders through a finite state machine — from creation and approval to execution and archival.</p>
           <div class="skill-tags"><span class="skill-tag">Kafka</span><span class="skill-tag">FSM</span><span class="skill-tag">REST</span></div>
+          <span class="card-hint" data-i18n="card.hint">Click for details →</span>
         </div>
-        <div class="project-card">
+
+        <div class="project-card" data-modal="purchase-request">
           <div class="project-icon">📋</div>
-          <h3 class="project-title">qppmmpurchaserequest</h3>
-          <p class="project-desc">Purchase request management service — creation, validation, and routing of procurement requests.</p>
+          <h3 class="project-title" data-i18n="w2.title">Purchase Request Management</h3>
+          <p class="project-desc" data-i18n="w2.desc">Creation, validation, and routing of procurement requests across departments, with approval workflows and audit trail.</p>
           <div class="skill-tags"><span class="skill-tag">REST</span><span class="skill-tag">JPA</span></div>
+          <span class="card-hint" data-i18n="card.hint">Click for details →</span>
         </div>
-        <div class="project-card">
+
+        <div class="project-card" data-modal="data-catalog">
           <div class="project-icon">🗂️</div>
-          <h3 class="project-title">qdcat — Data Catalog</h3>
-          <p class="project-desc">Metadata registry for enterprise data assets. MapStruct for DTO mapping, Liquibase for schema versioning.</p>
+          <h3 class="project-title" data-i18n="w3.title">Data Catalog</h3>
+          <p class="project-desc" data-i18n="w3.desc">Enterprise metadata registry for data assets — datasets, schemas, lineage. MapStruct for mapping, Liquibase for schema versioning.</p>
           <div class="skill-tags"><span class="skill-tag">MapStruct</span><span class="skill-tag">Liquibase</span></div>
+          <span class="card-hint" data-i18n="card.hint">Click for details →</span>
         </div>
-        <div class="project-card">
+
+        <div class="project-card" data-modal="dataflows">
           <div class="project-icon">🌊</div>
-          <h3 class="project-title">qdsmr — Dataflows</h3>
-          <p class="project-desc">Streaming data model service with an in-memory processing engine for high-throughput data flows.</p>
+          <h3 class="project-title" data-i18n="w4.title">Dataflows Engine</h3>
+          <p class="project-desc" data-i18n="w4.desc">Streaming data model service with an in-memory processing engine for high-throughput event-driven data pipelines.</p>
           <div class="skill-tags"><span class="skill-tag">In-memory</span><span class="skill-tag">Streaming</span></div>
+          <span class="card-hint" data-i18n="card.hint">Click for details →</span>
         </div>
-        <div class="project-card">
+
+        <div class="project-card" data-modal="bpm">
           <div class="project-icon">⚙️</div>
-          <h3 class="project-title">gis-supd</h3>
-          <p class="project-desc">Business process orchestration system built on Camunda BPM with Kerberos authentication.</p>
-          <div class="skill-tags"><span class="skill-tag">Camunda BPM</span><span class="skill-tag">Kerberos</span></div>
+          <h3 class="project-title" data-i18n="w5.title">Process Orchestration</h3>
+          <p class="project-desc" data-i18n="w5.desc">Business process orchestration system on Camunda BPM — BPMN workflows, DMN rules, and Kerberos-authenticated REST integration.</p>
+          <div class="skill-tags"><span class="skill-tag">Camunda BPM</span><span class="skill-tag">BPMN</span><span class="skill-tag">Kerberos</span></div>
+          <span class="card-hint" data-i18n="card.hint">Click for details →</span>
         </div>
-        <div class="project-card">
+
+        <div class="project-card" data-modal="analytics">
           <div class="project-icon">📊</div>
-          <h3 class="project-title">superset_duckdb</h3>
-          <p class="project-desc">Analytics layer combining Apache Superset dashboards with DuckDB as a fast analytical engine.</p>
+          <h3 class="project-title" data-i18n="w6.title">Analytics Platform</h3>
+          <p class="project-desc" data-i18n="w6.desc">Self-service analytics layer: Apache Superset dashboards backed by DuckDB for fast analytical queries over procurement data.</p>
           <div class="skill-tags"><span class="skill-tag">Superset</span><span class="skill-tag">DuckDB</span><span class="skill-tag">Python</span></div>
+          <span class="card-hint" data-i18n="card.hint">Click for details →</span>
         </div>
+
       </div>
     </div>
   </div>
@@ -246,70 +255,59 @@
 <!-- PROJECTS -->
 <section class="section" id="projects">
   <div class="container">
-    <h2 class="section-title">Personal <span class="accent">Projects</span></h2>
+    <h2 class="section-title" data-i18n="projects.title">Personal <span class="accent">Projects</span></h2>
     <div class="projects-grid">
 
-      <div class="project-card">
-        <div class="project-icon">🤖</div>
-        <h3 class="project-title">reminderBot</h3>
-        <p class="project-desc">
-          Telegram bot for household task management. Telegram Mini App for scheduling,
-          inline buttons with snooze logic, daily multi-time tasks, JSON catalog import,
-          and automatic re-ping after 5 minutes of silence.
-        </p>
-        <div class="skill-tags">
-          <span class="skill-tag">Java 21</span>
-          <span class="skill-tag">Maven</span>
-          <span class="skill-tag">Telegram Bot API</span>
-          <span class="skill-tag">Docker</span>
+      <div class="project-card" data-modal="reminder-bot">
+        <div class="project-card-top">
+          <div class="project-icon">🤖</div>
+          <a href="https://github.com/ArtemBalakin/reminderBot" target="_blank" rel="noopener" class="github-link" title="GitHub" onclick="event.stopPropagation()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
         </div>
+        <h3 class="project-title" data-i18n="p1.title">Reminder Bot</h3>
+        <p class="project-desc" data-i18n="p1.desc">Telegram bot for household task management with a Mini App scheduler, snooze buttons, and automatic re-ping logic.</p>
+        <div class="skill-tags"><span class="skill-tag">Java 21</span><span class="skill-tag">Telegram API</span><span class="skill-tag">Docker</span></div>
+        <span class="card-hint" data-i18n="card.hint">Click for details →</span>
       </div>
 
-      <div class="project-card">
-        <div class="project-icon">❄️</div>
-        <h3 class="project-title">Snow Physics Simulation</h3>
-        <p class="project-desc">
-          University thesis: real-time snow simulation combining SPH (fluid particle dynamics)
-          and MPM (material point method) solvers for avalanche modelling. GPU compute
-          shaders, CSV benchmark recorder, per-avalanche frame timing.
-        </p>
-        <div class="skill-tags">
-          <span class="skill-tag">C#</span>
-          <span class="skill-tag">Unity</span>
-          <span class="skill-tag">SPH</span>
-          <span class="skill-tag">MPM</span>
-          <span class="skill-tag">GPU Compute</span>
+      <div class="project-card" data-modal="snow">
+        <div class="project-card-top">
+          <div class="project-icon">❄️</div>
+          <a href="https://github.com/ArtemBalakin/vkrSnow" target="_blank" rel="noopener" class="github-link" title="GitHub" onclick="event.stopPropagation()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
         </div>
+        <h3 class="project-title" data-i18n="p2.title">Snow Physics Simulation</h3>
+        <p class="project-desc" data-i18n="p2.desc">University thesis: real-time avalanche simulation using SPH fluid dynamics and MPM material point method on GPU compute shaders.</p>
+        <div class="skill-tags"><span class="skill-tag">C#</span><span class="skill-tag">Unity</span><span class="skill-tag">SPH</span><span class="skill-tag">MPM</span></div>
+        <span class="card-hint" data-i18n="card.hint">Click for details →</span>
       </div>
 
-      <div class="project-card">
-        <div class="project-icon">🎮</div>
-        <h3 class="project-title">MiniGames API</h3>
-        <p class="project-desc">
-          Framework library for Paper (Minecraft) plugins: global player queue,
-          team balancing, result persistence, and Brigadier command integration.
-          Powers the <em>Splatoon</em> "paint the world" mini-game mode.
-        </p>
-        <div class="skill-tags">
-          <span class="skill-tag">Kotlin</span>
-          <span class="skill-tag">Gradle</span>
-          <span class="skill-tag">Paper API</span>
-          <span class="skill-tag">Brigadier</span>
+      <div class="project-card" data-modal="minigames">
+        <div class="project-card-top">
+          <div class="project-icon">🎮</div>
+          <a href="https://github.com/JouTak/MiniGamesAPI" target="_blank" rel="noopener" class="github-link" title="GitHub" onclick="event.stopPropagation()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
         </div>
+        <h3 class="project-title" data-i18n="p3.title">MiniGames API</h3>
+        <p class="project-desc" data-i18n="p3.desc">Framework library for Minecraft Paper plugins: player queue, team balancing, result persistence, and Brigadier command integration.</p>
+        <div class="skill-tags"><span class="skill-tag">Kotlin</span><span class="skill-tag">Paper API</span><span class="skill-tag">Brigadier</span></div>
+        <span class="card-hint" data-i18n="card.hint">Click for details →</span>
       </div>
 
-      <div class="project-card">
-        <div class="project-icon">🗂️</div>
-        <h3 class="project-title">KPIBot / timeBot</h3>
-        <p class="project-desc">
-          Telegram bots for personal productivity: KPI tracking and daily time logging.
-          Built with Java + Maven, deployed via Docker.
-        </p>
-        <div class="skill-tags">
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">Telegram Bot API</span>
-          <span class="skill-tag">Docker</span>
+      <div class="project-card" data-modal="splatoon">
+        <div class="project-card-top">
+          <div class="project-icon">🎨</div>
+          <a href="https://github.com/JouTak/Splatoon" target="_blank" rel="noopener" class="github-link" title="GitHub" onclick="event.stopPropagation()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
         </div>
+        <h3 class="project-title" data-i18n="p4.title">Splatoon Mini-Game</h3>
+        <p class="project-desc" data-i18n="p4.desc">"Paint the world" team arena game for Minecraft. Integrated with MiniGames API, dynamic arena cloning via Multiverse-Core.</p>
+        <div class="skill-tags"><span class="skill-tag">Kotlin</span><span class="skill-tag">MiniGames API</span><span class="skill-tag">Multiverse</span></div>
+        <span class="card-hint" data-i18n="card.hint">Click for details →</span>
       </div>
 
     </div>
@@ -319,9 +317,9 @@
 <!-- CONTACT -->
 <section class="section" id="contact">
   <div class="container">
-    <h2 class="section-title">Get in <span class="accent">Touch</span></h2>
+    <h2 class="section-title" data-i18n="contact.title">Get in <span class="accent">Touch</span></h2>
     <div class="contact-wrapper">
-      <p class="contact-lead">
+      <p class="contact-lead" data-i18n="contact.lead">
         Open to interesting backend opportunities, tech conversations,
         or collaboration on side projects.
       </p>
@@ -353,8 +351,16 @@
 </section>
 
 <footer class="footer">
-  <p>Built with ☕ by Artem Balakin · <a href="https://github.com/ArtemBalakin/ArtemBalakin.github.io" target="_blank" rel="noopener">source</a></p>
+  <p data-i18n="footer">Built with ☕ by Artem Balakin · <a href="https://github.com/ArtemBalakin/ArtemBalakin.github.io" target="_blank" rel="noopener">source</a></p>
 </footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
 
 <script src="main.js"></script>
 </body>
