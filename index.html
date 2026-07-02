@@ -114,7 +114,7 @@
 </section>
 
 <!-- STACK -->
-<section class="section section-alt" id="stack">
+<section class="section" id="stack">
   <div class="container">
     <h2 class="section-title">Tech <span class="accent">Stack</span></h2>
     <div class="stack-grid">
@@ -176,61 +176,67 @@
   <div class="container">
     <h2 class="section-title">Work <span class="accent">Experience</span></h2>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <h3>Backend Developer</h3>
-            <span class="timeline-company">Diasoft</span>
-            <span class="timeline-date">2022 — Present</span>
-          </div>
-          <p class="timeline-desc">
-            Building and maintaining enterprise microservices for the <strong>qArcher</strong>
-            platform — a suite of services powering public procurement for government clients.
-            Each service owns its full vertical: REST API, Kafka events, PostgreSQL schema,
-            Liquibase migrations, autotests, and CI/CD pipeline.
-          </p>
-          <div class="timeline-services">
-            <div class="service-row">
-              <code>qipipurchase</code>
-              <span>Purchase order lifecycle &amp; state machine</span>
-            </div>
-            <div class="service-row">
-              <code>qppmmpurchaserequest</code>
-              <span>Purchase request management</span>
-            </div>
-            <div class="service-row">
-              <code>qdcat</code>
-              <span>Data Catalog — metadata registry (MapStruct, Liquibase)</span>
-            </div>
-            <div class="service-row">
-              <code>qdsmr</code>
-              <span>Dataflows — streaming data model &amp; in-memory engine</span>
-            </div>
-            <div class="service-row">
-              <code>gis-supd</code>
-              <span>Business process orchestration — Camunda BPM, Kerberos auth</span>
-            </div>
-            <div class="service-row">
-              <code>directum-adapter-py</code>
-              <span>ECM integration adapter — Python, Docker</span>
-            </div>
-            <div class="service-row">
-              <code>superset_duckdb</code>
-              <span>Analytics layer — Apache Superset + DuckDB</span>
-            </div>
-          </div>
-          <div class="skill-tags" style="margin-top:1rem">
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">Spring Boot</span>
-            <span class="skill-tag">Kafka</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Kubernetes</span>
-            <span class="skill-tag">Camunda</span>
-            <span class="skill-tag">Jenkins</span>
-          </div>
+    <div class="work-company">
+      <div class="work-company-header">
+        <div class="work-dot" id="workDot"></div>
+        <div class="work-line" id="workLine"></div>
+        <div>
+          <h3 class="work-title">Backend Developer <span class="accent">@ Diasoft</span></h3>
+          <span class="work-date">2022 — Present</span>
+        </div>
+      </div>
+      <p class="work-desc">
+        Building and maintaining enterprise microservices for the <strong>qArcher</strong>
+        platform — a suite of services powering public procurement for government clients.
+        Each service owns its full vertical: REST API, Kafka events, PostgreSQL schema,
+        Liquibase migrations, autotests, and CI/CD pipeline.
+      </p>
+      <div class="skill-tags" style="margin-bottom:2rem">
+        <span class="skill-tag main">Java</span>
+        <span class="skill-tag main">Spring Boot</span>
+        <span class="skill-tag main">Kafka</span>
+        <span class="skill-tag main">PostgreSQL</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">Camunda</span>
+        <span class="skill-tag">Jenkins</span>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-icon">🛒</div>
+          <h3 class="project-title">qipipurchase</h3>
+          <p class="project-desc">Purchase order lifecycle management with a finite state machine. Full event-driven flow via Kafka.</p>
+          <div class="skill-tags"><span class="skill-tag">Kafka</span><span class="skill-tag">FSM</span><span class="skill-tag">REST</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">📋</div>
+          <h3 class="project-title">qppmmpurchaserequest</h3>
+          <p class="project-desc">Purchase request management service — creation, validation, and routing of procurement requests.</p>
+          <div class="skill-tags"><span class="skill-tag">REST</span><span class="skill-tag">JPA</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">🗂️</div>
+          <h3 class="project-title">qdcat — Data Catalog</h3>
+          <p class="project-desc">Metadata registry for enterprise data assets. MapStruct for DTO mapping, Liquibase for schema versioning.</p>
+          <div class="skill-tags"><span class="skill-tag">MapStruct</span><span class="skill-tag">Liquibase</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">🌊</div>
+          <h3 class="project-title">qdsmr — Dataflows</h3>
+          <p class="project-desc">Streaming data model service with an in-memory processing engine for high-throughput data flows.</p>
+          <div class="skill-tags"><span class="skill-tag">In-memory</span><span class="skill-tag">Streaming</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">⚙️</div>
+          <h3 class="project-title">gis-supd</h3>
+          <p class="project-desc">Business process orchestration system built on Camunda BPM with Kerberos authentication.</p>
+          <div class="skill-tags"><span class="skill-tag">Camunda BPM</span><span class="skill-tag">Kerberos</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">📊</div>
+          <h3 class="project-title">superset_duckdb</h3>
+          <p class="project-desc">Analytics layer combining Apache Superset dashboards with DuckDB as a fast analytical engine.</p>
+          <div class="skill-tags"><span class="skill-tag">Superset</span><span class="skill-tag">DuckDB</span><span class="skill-tag">Python</span></div>
         </div>
       </div>
     </div>
@@ -238,7 +244,7 @@
 </section>
 
 <!-- PROJECTS -->
-<section class="section section-alt" id="projects">
+<section class="section" id="projects">
   <div class="container">
     <h2 class="section-title">Personal <span class="accent">Projects</span></h2>
     <div class="projects-grid">
