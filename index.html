@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artem Balakin — Backend Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <span class="nav-logo">ab<span class="accent">.</span></span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon">☀️</span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <p class="hero-greeting">Hello, I'm</p>
+    <h1 class="hero-name">Artem Balakin</h1>
+    <div class="hero-roles">
+      <span class="typed-text" id="typed"></span><span class="cursor">|</span>
+    </div>
+    <p class="hero-desc">
+      Java backend developer building enterprise microservices at Diasoft —
+      distributed systems, event-driven architecture, and public procurement platforms
+      for government clients.
+    </p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">See my work</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="code-block">
+      <div class="code-header">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="code-filename">Developer.java</span>
+      </div>
+      <pre class="code-body"><span class="kw">public class</span> <span class="cl">Developer</span> {
+
+  <span class="kw">private final</span> String name =
+      <span class="str">"Artem Balakin"</span>;
+
+  <span class="kw">private final</span> List&lt;String&gt; stack = List.of(
+      <span class="str">"Java 21"</span>, <span class="str">"Spring Boot"</span>,
+      <span class="str">"Kafka"</span>, <span class="str">"PostgreSQL"</span>,
+      <span class="str">"Docker"</span>, <span class="str">"Kubernetes"</span>
+  );
+
+  <span class="kw">public</span> String currentRole() {
+    <span class="kw">return</span> <span class="str">"Diasoft · Backend"</span>;
+  }
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <h2 class="section-title">About <span class="accent">Me</span></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a backend developer specialising in <strong>Java microservices</strong>
+          on top of the Spring ecosystem. At Diasoft I work on a suite of services
+          that power public procurement workflows for Russian government agencies —
+          from purchase requests all the way through contract execution.
+        </p>
+        <p>
+          Outside of work I automate my daily life with <strong>Telegram bots</strong>,
+          occasionally hack together <strong>Minecraft plugins in Kotlin</strong>,
+          and wrote my university thesis on <strong>real-time snow physics</strong>
+          (SPH + MPM solvers, Unity, GPU compute shaders).
+        </p>
+        <div class="about-chips">
+          <span class="chip">🏢 Diasoft</span>
+          <span class="chip">🎓 ITMO University</span>
+          <span class="chip">📍 Russia</span>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="stat-num">9+</span>
+          <span class="stat-label">Microservices shipped</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">Years in Java</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Coffee consumed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="section section-alt" id="stack">
+  <div class="container">
+    <h2 class="section-title">Tech <span class="accent">Stack</span></h2>
+    <div class="stack-grid">
+
+      <div class="stack-group">
+        <h3 class="stack-group-title">Backend</h3>
+        <div class="skill-tags">
+          <span class="skill-tag main">Java 17 / 21</span>
+          <span class="skill-tag main">Spring Boot</span>
+          <span class="skill-tag main">Spring Data JPA</span>
+          <span class="skill-tag main">Kotlin</span>
+          <span class="skill-tag">REST / OpenAPI</span>
+          <span class="skill-tag">Maven</span>
+          <span class="skill-tag">Gradle</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <h3 class="stack-group-title">Data & Messaging</h3>
+        <div class="skill-tags">
+          <span class="skill-tag main">Apache Kafka</span>
+          <span class="skill-tag main">PostgreSQL</span>
+          <span class="skill-tag">Liquibase</span>
+          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">DuckDB</span>
+          <span class="skill-tag">Apache Superset</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <h3 class="stack-group-title">Infrastructure</h3>
+        <div class="skill-tags">
+          <span class="skill-tag main">Docker</span>
+          <span class="skill-tag main">Kubernetes</span>
+          <span class="skill-tag">Jenkins</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Camunda BPM</span>
+          <span class="skill-tag">Kibana</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <h3 class="stack-group-title">Also</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C#</span>
+          <span class="skill-tag">Unity</span>
+          <span class="skill-tag">Telegram Bot API</span>
+          <span class="skill-tag">Paper API</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WORK EXPERIENCE -->
+<section class="section" id="work">
+  <div class="container">
+    <h2 class="section-title">Work <span class="accent">Experience</span></h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h3>Backend Developer</h3>
+            <span class="timeline-company">Diasoft</span>
+            <span class="timeline-date">2022 — Present</span>
+          </div>
+          <p class="timeline-desc">
+            Building and maintaining enterprise microservices for the <strong>qArcher</strong>
+            platform — a suite of services powering public procurement for government clients.
+            Each service owns its full vertical: REST API, Kafka events, PostgreSQL schema,
+            Liquibase migrations, autotests, and CI/CD pipeline.
+          </p>
+          <div class="timeline-services">
+            <div class="service-row">
+              <code>qipipurchase</code>
+              <span>Purchase order lifecycle &amp; state machine</span>
+            </div>
+            <div class="service-row">
+              <code>qppmmpurchaserequest</code>
+              <span>Purchase request management</span>
+            </div>
+            <div class="service-row">
+              <code>qdcat</code>
+              <span>Data Catalog — metadata registry (MapStruct, Liquibase)</span>
+            </div>
+            <div class="service-row">
+              <code>qdsmr</code>
+              <span>Dataflows — streaming data model &amp; in-memory engine</span>
+            </div>
+            <div class="service-row">
+              <code>gis-supd</code>
+              <span>Business process orchestration — Camunda BPM, Kerberos auth</span>
+            </div>
+            <div class="service-row">
+              <code>directum-adapter-py</code>
+              <span>ECM integration adapter — Python, Docker</span>
+            </div>
+            <div class="service-row">
+              <code>superset_duckdb</code>
+              <span>Analytics layer — Apache Superset + DuckDB</span>
+            </div>
+          </div>
+          <div class="skill-tags" style="margin-top:1rem">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Kafka</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Camunda</span>
+            <span class="skill-tag">Jenkins</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section section-alt" id="projects">
+  <div class="container">
+    <h2 class="section-title">Personal <span class="accent">Projects</span></h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon">🤖</div>
+        <h3 class="project-title">reminderBot</h3>
+        <p class="project-desc">
+          Telegram bot for household task management. Telegram Mini App for scheduling,
+          inline buttons with snooze logic, daily multi-time tasks, JSON catalog import,
+          and automatic re-ping after 5 minutes of silence.
+        </p>
+        <div class="skill-tags">
+          <span class="skill-tag">Java 21</span>
+          <span class="skill-tag">Maven</span>
+          <span class="skill-tag">Telegram Bot API</span>
+          <span class="skill-tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">❄️</div>
+        <h3 class="project-title">Snow Physics Simulation</h3>
+        <p class="project-desc">
+          University thesis: real-time snow simulation combining SPH (fluid particle dynamics)
+          and MPM (material point method) solvers for avalanche modelling. GPU compute
+          shaders, CSV benchmark recorder, per-avalanche frame timing.
+        </p>
+        <div class="skill-tags">
+          <span class="skill-tag">C#</span>
+          <span class="skill-tag">Unity</span>
+          <span class="skill-tag">SPH</span>
+          <span class="skill-tag">MPM</span>
+          <span class="skill-tag">GPU Compute</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🎮</div>
+        <h3 class="project-title">MiniGames API</h3>
+        <p class="project-desc">
+          Framework library for Paper (Minecraft) plugins: global player queue,
+          team balancing, result persistence, and Brigadier command integration.
+          Powers the <em>Splatoon</em> "paint the world" mini-game mode.
+        </p>
+        <div class="skill-tags">
+          <span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">Gradle</span>
+          <span class="skill-tag">Paper API</span>
+          <span class="skill-tag">Brigadier</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🗂️</div>
+        <h3 class="project-title">KPIBot / timeBot</h3>
+        <p class="project-desc">
+          Telegram bots for personal productivity: KPI tracking and daily time logging.
+          Built with Java + Maven, deployed via Docker.
+        </p>
+        <div class="skill-tags">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Telegram Bot API</span>
+          <span class="skill-tag">Docker</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <h2 class="section-title">Get in <span class="accent">Touch</span></h2>
+    <div class="contact-wrapper">
+      <p class="contact-lead">
+        Open to interesting backend opportunities, tech conversations,
+        or collaboration on side projects.
+      </p>
+      <div class="contact-links">
+        <a href="https://t.me/ArtemBalakin" class="contact-card" target="_blank" rel="noopener">
+          <span class="contact-icon">✈️</span>
+          <div>
+            <span class="contact-label">Telegram</span>
+            <span class="contact-value">@ArtemBalakin</span>
+          </div>
+        </a>
+        <a href="mailto:artem.balakin.v@gmail.com" class="contact-card">
+          <span class="contact-icon">📧</span>
+          <div>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">artem.balakin.v@gmail.com</span>
+          </div>
+        </a>
+        <a href="https://github.com/ArtemBalakin" class="contact-card" target="_blank" rel="noopener">
+          <span class="contact-icon">💻</span>
+          <div>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">ArtemBalakin</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Built with ☕ by Artem Balakin · <a href="https://github.com/ArtemBalakin/ArtemBalakin.github.io" target="_blank" rel="noopener">source</a></p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
