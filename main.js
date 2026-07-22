@@ -37,7 +37,9 @@ const t = {
     'w6.desc':  'Self-service analytics: Apache Superset dashboards backed by DuckDB for fast analytical queries over procurement data.',
     'projects.title': 'Personal <span class="accent">Projects</span>',
     'p1.title': 'Reminder Bot',
-    'p1.desc':  'Telegram bot for household task management with a Mini App scheduler, snooze buttons, and automatic re-ping logic.',
+    'p1.desc':  'Telegram bot for household task management — Mini App scheduler, snooze buttons, auto re-ping, and shared team task boards with owner/admin roles.',
+    'p5.title': 'Salon Booking Bot',
+    'p5.desc':  'Telegram booking bot + Mini App for local businesses: pick a service, master, and time slot. HMAC-verified Telegram auth, one-command deploy.',
     'p2.title': 'Snow Physics Simulation',
     'p2.desc':  'University thesis: real-time avalanche simulation using SPH fluid dynamics and MPM material point method on GPU compute shaders.',
     'p3.title': 'MiniGames API',
@@ -86,7 +88,9 @@ const t = {
     'w6.desc':  'Self-service аналитика: Apache Superset с DuckDB для быстрых аналитических запросов по данным закупок.',
     'projects.title': 'Личные <span class="accent">проекты</span>',
     'p1.title': 'Reminder Bot',
-    'p1.desc':  'Telegram-бот для домашних дел с Mini App для расписания, кнопками отложить и автоматическим перепингом.',
+    'p1.desc':  'Telegram-бот для домашних дел — Mini App с расписанием, кнопками отложить, автоперепингом и общими досками дел для команд с ролями владелец/админ.',
+    'p5.title': 'Бот записи для салона',
+    'p5.desc':  'Telegram-бот записи + Mini App для локального бизнеса: выбор услуги, мастера и времени. Проверка подлинности Telegram через HMAC, деплой одной командой.',
     'p2.title': 'Симуляция физики снега',
     'p2.desc':  'Дипломная работа: симуляция лавин в реальном времени методами SPH (гидродинамика) и MPM (материальные точки) на GPU.',
     'p3.title': 'MiniGames API',
@@ -122,8 +126,11 @@ const modals = {
       body:`<p>Self-service analytics layer enabling procurement analysts to build dashboards without SQL. Apache Superset as the BI frontend, DuckDB as a fast analytical engine.</p><h4>Key features</h4><ul><li>Apache Superset with custom dataset definitions</li><li>DuckDB for columnar in-process queries</li><li>Python ETL scripts for data ingestion</li><li>Dockerised deployment via Compose</li><li>Pre-built dashboards for procurement KPIs</li></ul>`,
       tags:['Apache Superset','DuckDB','Python','Docker Compose'] },
     'reminder-bot': { icon:'🤖', title:'Reminder Bot', link:'https://github.com/ArtemBalakin/reminderBot',
-      body:`<p>A Telegram bot for managing household tasks and daily routines. Java 21 + Maven, deployed via Docker Compose.</p><h4>Features</h4><ul><li>Telegram Mini App for visual date/time scheduling</li><li>Inline action buttons: Done / On my way / Snooze</li><li>Automatic re-ping after 5 minutes of no response</li><li>Daily tasks with multiple reminder times</li><li>JSON catalog import for bulk task creation</li><li>New tasks via plain chat messages with <code>/new</code></li></ul>`,
-      tags:['Java 21','Maven','Telegram Bot API','Telegram Mini App','Docker'] },
+      body:`<p>A Telegram bot for managing household tasks and daily routines. Java 21 + Maven, deployed via Docker Compose.</p><h4>Features</h4><ul><li>Telegram Mini App for visual date/time scheduling</li><li>Inline action buttons: Done / On my way / Snooze</li><li>Automatic re-ping after 5 minutes of no response</li><li>Daily tasks with multiple reminder times</li><li><strong>Teams</strong>: separate shared task catalogs, join-request approval, owner/admin roles</li><li>JSON catalog import for bulk task creation</li><li>New tasks via plain chat messages with <code>/new</code></li></ul>`,
+      tags:['Java 21','Maven','Telegram Bot API','Telegram Mini App','PostgreSQL','Docker'] },
+    'booking-bot': { icon:'💈', title:'Salon Booking Bot',
+      body:`<p>A Telegram booking bot + Mini App built for a local service business (beauty salon) — clients pick a service, master, and time slot without leaving the chat.</p><h4>Features</h4><ul><li>Mini App booking flow: service → master → time slot → confirmation</li><li>Server-side <strong>HMAC verification</strong> of Telegram's <code>initData</code> — the backend never trusts a client-supplied user id</li><li>Spring Boot REST API + PostgreSQL, Flyway migrations, demo catalog seeded on first boot</li><li>UI theming reduced to two CSS variables so a designer can reskin it per client</li><li>Dockerised and deployed to Railway with a single <code>railway up</code></li></ul>`,
+      tags:['Java 21','Spring Boot','PostgreSQL','Flyway','Telegram Mini App','Docker','Railway'] },
     'snow': { icon:'❄️', title:'Snow Physics Simulation', link:'https://github.com/ArtemBalakin/vkrSnow',
       body:`<p>University thesis — real-time snow and avalanche simulation combining two physical models in a single Unity scene.</p><h4>Physics</h4><ul><li><strong>SPH</strong> — fluid-like snow flow and avalanche dynamics</li><li><strong>MPM</strong> — slab release and granular snow behaviour</li><li>GPU Compute Shaders for particle kernel execution</li></ul><h4>Architecture</h4><ul><li>Clean service interfaces and composition root</li><li>Unity adapter layer isolating physics from engine lifecycle</li><li>CSV benchmark recorder with per-avalanche frame timing</li><li>Voxel snow world with save/load and terrain integration</li></ul>`,
       tags:['C#','Unity','SPH','MPM','GPU Compute','Benchmark'] },
@@ -154,8 +161,11 @@ const modals = {
       body:`<p>Self-service аналитика для аналитиков закупок. Apache Superset как BI-интерфейс, DuckDB как аналитический движок.</p><h4>Ключевые возможности</h4><ul><li>Apache Superset с кастомными датасетами</li><li>DuckDB для колоночных in-process запросов</li><li>Python ETL-скрипты для загрузки данных</li><li>Docker Compose для деплоя</li><li>Готовые дашборды с KPI по закупкам</li></ul>`,
       tags:['Apache Superset','DuckDB','Python','Docker Compose'] },
     'reminder-bot': { icon:'🤖', title:'Reminder Bot', link:'https://github.com/ArtemBalakin/reminderBot',
-      body:`<p>Telegram-бот для управления домашними делами и напоминаниями. Java 21 + Maven, Docker Compose.</p><h4>Возможности</h4><ul><li>Telegram Mini App для настройки расписания</li><li>Инлайн-кнопки: Сделал / Пошёл делать / Отложить</li><li>Автоперепинг через 5 минут молчания</li><li>Ежедневные дела с несколькими временами</li><li>Импорт каталога через JSON-файл</li><li>Создание дел через <code>/new</code></li></ul>`,
-      tags:['Java 21','Maven','Telegram Bot API','Telegram Mini App','Docker'] },
+      body:`<p>Telegram-бот для управления домашними делами и напоминаниями. Java 21 + Maven, Docker Compose.</p><h4>Возможности</h4><ul><li>Telegram Mini App для настройки расписания</li><li>Инлайн-кнопки: Сделал / Пошёл делать / Отложить</li><li>Автоперепинг через 5 минут молчания</li><li>Ежедневные дела с несколькими временами</li><li><strong>Команды</strong>: отдельные общие каталоги дел, заявки на вступление с одобрением, роли владелец/админ</li><li>Импорт каталога через JSON-файл</li><li>Создание дел через <code>/new</code></li></ul>`,
+      tags:['Java 21','Maven','Telegram Bot API','Telegram Mini App','PostgreSQL','Docker'] },
+    'booking-bot': { icon:'💈', title:'Бот записи для салона',
+      body:`<p>Telegram-бот записи + Mini App для локального сервисного бизнеса (салон красоты) — клиент выбирает услугу, мастера и время, не выходя из чата.</p><h4>Возможности</h4><ul><li>Флоу записи в Mini App: услуга → мастер → время → подтверждение</li><li>Серверная <strong>HMAC-проверка</strong> <code>initData</code> Telegram — бэкенд не доверяет chat_id от клиента напрямую</li><li>Spring Boot REST API + PostgreSQL, миграции Flyway, демо-каталог при первом запуске</li><li>Вся тема сведена к двум CSS-переменным — дизайнер перекрашивает под конкретного клиента</li><li>Докеризован и задеплоен на Railway одной командой <code>railway up</code></li></ul>`,
+      tags:['Java 21','Spring Boot','PostgreSQL','Flyway','Telegram Mini App','Docker','Railway'] },
     'snow': { icon:'❄️', title:'Симуляция физики снега', link:'https://github.com/ArtemBalakin/vkrSnow',
       body:`<p>Дипломная работа — симуляция снега и лавин в реальном времени, две физические модели в одной Unity-сцене.</p><h4>Физика</h4><ul><li><strong>SPH</strong> — жидкостное течение снега и динамика лавин</li><li><strong>MPM</strong> — откол плиты и поведение сыпучего снега</li><li>GPU Compute Shaders для ядер частиц</li></ul><h4>Архитектура</h4><ul><li>Чистые сервисные интерфейсы и composition root</li><li>Unity-адаптерный слой, изолирующий физику</li><li>CSV-рекордер бенчмарков с пофреймовой разбивкой</li><li>Воксельный мир снега с сохранением/загрузкой</li></ul>`,
       tags:['C#','Unity','SPH','MPM','GPU Compute','Benchmark'] },
@@ -278,6 +288,23 @@ if (workLine && workSec) {
       ? '0 0 0 4px var(--accent-dim), 0 0 28px var(--accent-glow)'
       : '0 0 0 4px var(--accent-dim)';
   }, { passive: true });
+}
+
+// ── Project card spotlight + tilt (mouse-driven, no-op on touch) ──
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('.project-card').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      card.style.setProperty('--mx', x + 'px');
+      card.style.setProperty('--my', y + 'px');
+      var rotateX = ((y / rect.height) - 0.5) * -5;
+      var rotateY = ((x / rect.width) - 0.5) * 5;
+      card.style.transform = 'perspective(700px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-3px)';
+    });
+    card.addEventListener('mouseleave', function() { card.style.transform = ''; });
+  });
 }
 
 // ── Modal ──
